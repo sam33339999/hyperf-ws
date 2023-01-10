@@ -42,7 +42,8 @@
         "kint-php/kint": "^5.0",
         "mockery/mockery": "^1.0",
         "phpstan/phpstan": "^1.0",
-        "swoole/ide-helper": "~5.0.0"
+        "swoole/ide-helper": "~5.0.0",
+        "ukko/phpredis-phpdoc": "dev-master"
     },
     "suggest": {
         "ext-openssl": "Required to use HTTPS.",

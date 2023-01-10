@@ -37,3 +37,13 @@ $ php bin/hyperf.php start
 This will start the cli-server on port `9501`, and bind it to all network interfaces. You can then visit the site at `http://localhost:9501/`
 
 which will bring up Hyperf default home page.
+
+# 安裝依賴
+```bash
+swoole-cli /usr/local/bin/composer require --dev swoole/ide-helper
+swoole-cli /usr/local/bin/composer require --dev kint-php/kint
+swoole-cli /usr/local/bin/composer require hyperf/websocket-server
+swoole-cli /usr/local/bin/composer require --dev ukko/phpredis-phpdoc:dev-master
+```
+
+`intelephense.index.workspace`: intelephense -> reload composer in workspace
