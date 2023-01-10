@@ -15,7 +15,8 @@ Router::get('/favicon.ico', fn () => '');
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
 
-Router::addRoute(['POST', 'HEAD', 'GET'], '/webhook', 'App\Controller\LineWebHookController@index');
+// Router::addRoute(['POST', 'HEAD', 'GET'], '/hook/', 'App\Controller\LineWebHookController@index');
+Router::addRoute(['POST', 'HEAD', 'GET'], '/hook/{channel:\d+}', [\App\Controller\LineWebHookController::class, 'hook']);
 
 
 

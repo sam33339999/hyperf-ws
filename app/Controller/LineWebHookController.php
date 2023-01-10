@@ -13,4 +13,19 @@ class LineWebHookController extends AbstractController
     {
         return $response->raw('Hello Hyperf!');
     }
+
+    /**
+     * @param \Hyperf\HttpServer\Request $request
+     * @param \Hyperf\HttpServer\Response $response
+     * 
+     */
+    public function hook(
+        RequestInterface $request,
+        ResponseInterface $response,
+        int $channel
+    ) {
+        $destination = $request->all();
+        $events = $request->input('events');
+
+    }
 }

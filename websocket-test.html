@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<script>
+    websocketTest();
+    function websocketTest() {
+        if ("WebSocket" in window) {
+            console.log("WebSocket is supported by your Browser!");
+            
+            var num = 0;
+            var ws = new WebSocket("ws://localhost:12222");
+
+            ws.onopen = function () {
+                // webSocket 已經連接上了，請使用send() 方法來發送數據
+                ws.send("Message to send");
+            }
+
+            window.setInterval(() => {
+                var ping = {"type": "ping"};
+                ws.send(JSON.stringify(ping));
+            }, 5000);
+
+            ws.onmessage = function (evt) {
+                var d = JSON.parse(evt.data);
+                console.log({ d });
+            }
+
+            ws.error = function (evt) {
+                console.log("Error occured: " + evt.data);
+            }
+
+            ws.onclose = function (evt) {
+                console.log("Connection closed.");
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

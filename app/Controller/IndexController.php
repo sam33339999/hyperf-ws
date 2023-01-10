@@ -11,11 +11,11 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+/**
+ * @property \Hyperf\HttpServer\Request $request
+ */
 class IndexController extends AbstractController
 {
-    /** @var \Hyperf\HttpServer\Request $request */
-    protected $request;
-
     public function index()
     {
         $user = $this->request->input('user', 'Hyperf');

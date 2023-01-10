@@ -1,6 +1,9 @@
 PATH := bin:$(PATH)
 
-run:
+init:
+	swoole-cli -d swoole.use_shortname=Off bin/hyperf.php
+
+start:
 	swoole-cli -d swoole.use_shortname=Off bin/hyperf.php start
 
 hot-reload:
