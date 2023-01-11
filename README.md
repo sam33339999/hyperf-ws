@@ -38,11 +38,16 @@ This will start the cli-server on port `9501`, and bind it to all network interf
 
 which will bring up Hyperf default home page.
 
+
+[基于 Hyperf 实现 RabbitMQ + WebSocket 消息推送](https://learnku.com/articles/35847)
+
 # 安裝依賴
 ```bash
+swoole-cli /usr/local/bin/composer require hyperf/websocket-server
+swoole-cli /usr/local/bin/composer require hyperf/amqp
+
 swoole-cli /usr/local/bin/composer require --dev swoole/ide-helper
 swoole-cli /usr/local/bin/composer require --dev kint-php/kint
-swoole-cli /usr/local/bin/composer require hyperf/websocket-server
 swoole-cli /usr/local/bin/composer require --dev ukko/phpredis-phpdoc:dev-master
 ```
 
